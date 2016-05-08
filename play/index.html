@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  
+  <script src="../node_modules/blocks/blocks.min.js"></script>
+  <script src="js/index.js"></script>
+</head>
+
+<body>
+  <div id="player">
+    
+    
+    <video id="video-player" width="100%">
+      <source src="media/WhatCouldIDo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <span id="main-play" class="glyphicon glyphicon-play" aria-hidden="true"></span>
+    <div class="control-bar" data-query="click(clickControl)">
+      <span>
+        <span id="play" class="glyphicon {{playClass}}" aria-hidden="true"></span>        
+        <span id="sound" class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+        <span class="timeter">
+          10 / 20
+        </span>
+      </span>
+      
+      <span class="control-right">
+        <span id="canlender" class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        <span id="sub" class="glyphicon glyphicon-subtitles" aria-hidden="true"></span>
+        <span id="setting" class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        <span id="full" class="glyphicon {{fullScreenClass}}" aria-hidden="true"></span>
+      </span>      
+    </div>
+  </div>
+</body>
+
+</html>

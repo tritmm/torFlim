@@ -1,0 +1,16 @@
+{
+  "name": "tor-flim",
+  "version": "1.0.0",
+  "description": "Do an mon Thiet Ke Giao Dien",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "QuangTrang",
+  "license": "ISC",
+  "dependencies": {
+    "blocks": "^0.3.4",
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.4"
+  }
+}
