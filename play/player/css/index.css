@@ -1,0 +1,159 @@
+#main-play {
+    position: absolute;
+    font-size: 10em;
+    background-color: rgba(128, 128, 128, 0.4);
+    color: white;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: rgba(128, 128, 128, 0.4);
+    padding-top: 0.05em;
+    padding-bottom: 0.1em;
+    padding-left: 0.15em;
+    padding-right: 0;
+    display: none
+}
+
+#video-player {
+  cursor: none
+}
+
+#player {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.control-bar {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 2em;
+    color: white;
+    text-align: left;
+    background-color: rgba(128, 128, 128, 0.4);
+}
+
+.control-show-true {
+    height: 1.7em;
+    padding: 0.2em;
+    animation-name: show-control;
+    animation-duration: 1s;
+}
+
+.control-show-false {
+    height: 0;
+    padding: 0;
+    animation-name: hide-control;
+    animation-duration: 1s;
+}
+
+.control-show-false #video-progress {
+    display: none
+}
+
+@keyframes hide-control {
+    from {
+        height: 1.7em;
+        padding: 0.2em;
+    }
+    to {
+        height: 0;
+        padding: 0;
+    }
+}
+
+@keyframes show-control {
+    from {
+        height: 0;
+        padding: 0;
+    }
+    to {
+        height: 1.7em;
+        padding: 0.2em;
+    }
+}
+
+.control-bar span {
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    cursor: pointer;
+}
+
+.control-right {
+    position: absolute;
+    top: 0.2em;
+    right: 0;
+}
+
+.control-left {
+    position: absolute;
+    top: 0.2em;
+    left: 0;
+}
+
+#video-progress {
+    width: 100%;
+    margin-top: 0.5em;
+    height: 0.3em !important;
+    padding-left: 8em;
+    padding-right: 8em;
+    background-color: rgba(255, 255, 255, 0) !important;
+    cursor: pointer;
+}
+
+.subTop {
+    top: 1em;
+}
+
+.subBottom {
+    bottom: 2em;
+}
+
+#canlender {
+    display: none
+}
+
+#sound-control {
+    display: none;
+    transform: rotate(-90deg);
+    position: absolute;
+    left: 0.5em;
+    top: -3em;
+    height: 0.5em;
+    background-color: white;
+    width: 5em;
+}
+
+#test video {
+    width: 100%
+}
+
+.play-true::before {
+    content: "\e073";
+}
+
+.play-false::before {
+    content: "\e072";
+}
+
+.full-true::before {
+    content: "\e097";
+}
+
+.full-false::before {
+    content: "\e096";
+    font-size: 0.9em;
+}
+
+.subtitle {
+    position: absolute;
+    padding: 0 25px 0 25px;
+    text-align: center;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: #000000 1px 1px 5px;
+    left: 10%;
+    right: 10%
+}

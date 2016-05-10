@@ -1,0 +1,34 @@
+<div id="player" data-query="on('mousemove', mouseMove)">
+    <video id="video-player" width="100%" data-query="on('loadeddata', videoHandle)
+        .on('timeupdate', videoHandle)
+        .on('seeked', videoHandle)
+        .on('onmouseover', videoHandle)
+        .on('click', videoHandle)
+        .on('ended', videoHandle)">
+      <!--<source src="http://channelz2.s2.mp3.zdn.vn/zv/7bea9106ddac9b1e59177ed77e6758e7/5731db50/2016/03/06/f/d/fdf222091907297644b3321270367beb.mp4?filename=Ngoc%20-%20Huong%20Tram.mp4" type="video/mp4">-->
+      <source src="player/media/WhatCouldIDo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="subtitle subTop">{{subTop}}</div>
+    <div class="subtitle subBottom">{{subBottom}}</div>
+
+    <div id="test"></div>
+    <span id="main-play" class="glyphicon glyphicon-play" aria-hidden="true"></span>
+
+    <div class="control-bar control-show-{{isShowControl}}" data-query="click(clickControl)">
+        <progress id="video-progress" data-query="click(clickProgress)" value="{{playTime}}" max="{{videoDuration}}"></progress>
+
+        <span class="control-left">
+        <span id="play" class="glyphicon play-{{isPlaying}}" aria-hidden="true"></span>
+        <span id="sound" class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+        <span id="current-time">{{currentTime}}</span>
+        </span>
+
+        <span class="control-right">
+        <span id="duration">{{duration}}</span>
+        <span id="canlender" class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        <span id="sub" class="glyphicon glyphicon-subtitles" aria-hidden="true"></span>
+        <span id="full" class="glyphicon full-{{isFullScreen}}" aria-hidden="true"></span>
+        </span>
+    </div>
+</div>
