@@ -32,7 +32,7 @@ Làm thế nào chúng tôi có thể dừng lại trong thời gian để tìm 
 
 9
 00:01:16,907 --> 00:01:22,303
-Tình yêu của tôi,xin vui lòng biết tôi sẽ luôn luôn cần anh
+Tình yêu của tôi, xin vui lòng biết tôi sẽ luôn luôn cần anh
 
 10
 00:01:22,551 --> 00:01:26,112
@@ -120,7 +120,7 @@ Chúng tôi chỉ tiếp tục trôi dạt ra xa nhau
 
 31
 00:03:33,967 --> 00:03:39,330
-Tình yêu của tôi,xin vui lòng biết tôi luôn luôn là của bạn
+Tình yêu của tôi, xin vui lòng biết tôi luôn luôn là của bạn
 
 32
 00:03:39,378 --> 00:03:42,940
@@ -136,7 +136,7 @@ Tình yêu của tôi không thay đổi, vẫn không nói ra
 
 35
 00:03:52,854 --> 00:03:58,160
-Tuy nhiên,tầm nhìn của chúng tôi là ra khỏi tầm tay
+Tuy nhiên, tầm nhìn của chúng tôi là ra khỏi tầm tay
 
 36
 00:03:58,324 --> 00:04:05,380
@@ -144,7 +144,7 @@ Tôi sẽ luôn luôn yêu bạn như tôi làm hôm nay
 
 37
 00:04:05,711 --> 00:04:11,210
-Tình yêu của tôi,xin vui lòng biết tôi luôn luôn là của bạn
+Tình yêu của tôi, xin vui lòng biết tôi luôn luôn là của bạn
 
 38
 00:04:11,379 --> 00:04:14,980
@@ -160,7 +160,7 @@ Tình yêu của tôi không thay đổi, vẫn không nói ra
 
 41
 00:04:24,719 --> 00:04:29,860
-Tuy nhiên,tầm nhìn của chúng tôi là ra khỏi tầm tay
+Tuy nhiên, tầm nhìn của chúng tôi là ra khỏi tầm tay
 
 42
 00:04:30,580 --> 00:04:36,650
