@@ -1,21 +1,281 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="player/css/index.css">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  
-  <script src="../node_modules/blocks/blocks.min.js"></script>
-  <script src="player/js/index.js"></script> 
-  <script src="js/index.js"></script>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="player/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="../node_modules/blocks/blocks.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="player/js/index.js"></script>
+    <script src="js/index.js"></script>
+    <style>
+      .floating-box {
+          display: inline-block;
+          width: 156px;
+          height: 245px;
+          margin: 10px;
+          border: 3px solid #73AD21;  
+      }
+       .alt1 {
+            overflow: hidden;
+            padding: 8px 8px;
+            font-size: 40px;
+            color: #666666;
+            font-weight: bold;
+        }
+
+        .alt2 {
+              background: url(media/bgtrans2.png) repeat;
+              padding: 8px 8px;
+              font-size: 40px;
+              color: #666666;
+              font-weight: bold;
+              overflow: hidden;
+          }
+          .intro div.info {
+              float: left;
+              margin-left: 0;
+              width: 400px;
+          }
+    </style>
 </head>
 
 <body>
-  <div data-query="view(Player)"></div>
-  <div > 
-  	
-  </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">torFlim</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                              <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <img src="media/avatar.jpg"></img>
+                                    <span id="username">Quang Trang</span>
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Favorite movie</a></li>
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Setting</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    </nav>
+
+
+          <div data-query="view(Player)"></div>
+
+<nav>
+  <ul class="pagination">
+    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+    <li><a class="watched" href="#">1 <span class="sr-only">(current)</span></a></li>
+    <li><a class="watched" href="#">2 <span class="sr-only">(current)</span></a></li>
+    <li><a class="watched" href="#">3 <span class="sr-only">(current)</span></a></li>
+    <li><a class="watched" href="#">4 <span class="sr-only">(current)</span></a></li>
+    <li class="active"><a href="#">5 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">6 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">7 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">8 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">9 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">10 <span class="sr-only">(current)</span></a></li>
+    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav>
+
+          <div id="fb-root"></div>
+          <script>
+
+              (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1735047286751588";
+                  fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+          </script>
+          
+          <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+          <div class="fb-comments" data-href="http://thachphamminh.blogspot.com/" data-numposts="5"></div>
+      </div>
+        <div class="alt2"> 
+        Tên Phim: 
+        <font color="white"> Thanh Xuân Năm Ấy</font>
+        </div>
+        <div class="alt1"> 
+        Đạo diễn: 
+         Lý Cát Phúc
+        </div>
+        <div class="alt2"> 
+        Diễn viên: 
+        <font color="white"> Lưu Thi Thi, Lưu Khiết</font>
+        </div>
+        <div class="alt1"> 
+        Thể Loại : 
+         Phim Tình Cảm
+        </div>
+        <div class="alt2"> 
+         Quốc gia: 
+        <font color="white"> Trung Quốc</font>
+        </div>
+        <div class="alt1"> 
+        Thời lượng : 
+         35 Tập
+        </div>
+        <div class="alt2"> 
+         Năm Phát Hành: 
+        <font color="white"> 2016</font>
+        </div>
+        <div class="alt1"> 
+        Lượt Xem : 
+         120 
+        </div>
+        <div class="alt2"> 
+         Trạng thái: 
+        <font color="white"> 3/35</font>
+        </div>
+        <div class="alt1"> 
+        Lượt Xem : 
+         120 
+        </div>
+
+
+      <div class="col-md-2">
+
+      </div>
+
+
+
+      
+
+      
+    </div>
+
+    <H1 style="padding: 8px 8px;">Phim liên quan:</H1>
+   <div class="floating-box">
+         <h4 class="widget-title">Chàng Luật Sư</h4>
+          <a href="../detail"><img src="media/banner/changluatsu.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Hậu Huệ Mặt Trời</h4>
+        <a href="../detail"><img src="media/banner/hauduemattroi.jpg" width="150" height="200" ></img>
+      </div>
+
+      <div class="floating-box">
+        <h4 class="widget-title">Sòng Bạc Gia</h4>
+        <a href="../detail"><img src="media/banner/songbachoanggia.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Sơn Hải Kinh</h4>
+        <a href="../detail"><img src="media/banner/sonhaikinhtruyen.jpg" width="150" height="200" ></img>
+      </div>
+
+      <div class="floating-box">
+         <h4 class="widget-title">Chàng Luật Sư</h4>
+          <a href="../detail"><img src="media/banner/changluatsu.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Hậu Huệ Mặt Trời</h4>
+        <a href="../detail"><img src="media/banner/hauduemattroi.jpg" width="150" height="200" ></img>
+      </div>
+
+      <div class="floating-box">
+        <h4 class="widget-title">Sòng Bạc Gia</h4>
+        <a href="../detail"><img src="media/banner/songbachoanggia.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Sơn Hải Kinh</h4>
+        <a href="../detail"><img src="media/banner/sonhaikinhtruyen.jpg" width="150" height="200" ></img>
+      </div>
+      <div class="floating-box">
+         <h4 class="widget-title">Chàng Luật Sư</h4>
+          <a href="../detail"><img src="media/banner/changluatsu.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Hậu Huệ Mặt Trời</h4>
+        <a href="../detail"><img src="media/banner/hauduemattroi.jpg" width="150" height="200" ></img>
+      </div>
+
+      <div class="floating-box">
+        <h4 class="widget-title">Sòng Bạc Gia</h4>
+        <a href="../detail"><img src="media/banner/songbachoanggia.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Sơn Hải Kinh</h4>
+        <a href="../detail"><img src="media/banner/sonhaikinhtruyen.jpg" width="150" height="200" ></img>
+      </div><div class="floating-box">
+         <h4 class="widget-title">Chàng Luật Sư</h4>
+          <a href="../detail"><img src="media/banner/changluatsu.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Hậu Huệ Mặt Trời</h4>
+        <a href="../detail"><img src="media/banner/hauduemattroi.jpg" width="150" height="200" ></img>
+      </div>
+
+      <div class="floating-box">
+        <h4 class="widget-title">Sòng Bạc Gia</h4>
+        <a href="../detail"><img src="media/banner/songbachoanggia.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Sơn Hải Kinh</h4>
+        <a href="../detail"><img src="media/banner/sonhaikinhtruyen.jpg" width="150" height="200" ></img>
+      </div>
+      <div class="floating-box">
+         <h4 class="widget-title">Chàng Luật Sư</h4>
+          <a href="../detail"><img src="media/banner/changluatsu.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Hậu Huệ Mặt Trời</h4>
+        <a href="../detail"><img src="media/banner/hauduemattroi.jpg" width="150" height="200" ></img>
+      </div>
+
+      <div class="floating-box">
+        <h4 class="widget-title">Sòng Bạc Gia</h4>
+        <a href="../detail"><img src="media/banner/songbachoanggia.jpg" width="150" height="200"  ></img>
+      </div>
+      <div class="floating-box">
+        <h4 class="widget-title">Sơn Hải Kinh</h4>
+        <a href="../detail"><img src="media/banner/sonhaikinhtruyen.jpg" width="150" height="200" ></img>
+      </div>
+      <div class="floating-box">
+         <h4 class="widget-title">Chàng Luật Sư</h4>
+          <a href="../detail"><img src="media/banner/changluatsu.jpg" width="150" height="200"  ></img>
+      </div>
+
 </body>
 
-</html>
+<footer>
+  
+</footer>
  
+
+</html>
