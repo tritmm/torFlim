@@ -16,22 +16,36 @@
 }
 
 @media (max-width: 767px) {
-  .navbar-form {
-    border-top: 0 !important;
-    margin-top: 0 !important;
-  }
-  
-  .navbar-right img {
-    bottom: 0.3em;
-  }
+    .navbar-form {
+        border-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    .navbar-right img {
+        bottom: 0.3em;
+    }
 }
 
 .navbar-brand {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .play-container {
-  margin-top: 4.5em;
-  margin-left: 5%;
-  margin-right: 5%;
+    margin-top: 4.5em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+@media (min-width: 767px) {
+    .input-group {
+        width: 33em;
+        margin: 0 auto;
+        display: table !important;
+    }
+    .navbar-form .form-group {
+        position: fixed;
+        width: 100%;
+        padding-right: 20em;
+        padding-left: 5em;
+        display: block !important;
+    }
 }
