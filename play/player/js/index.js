@@ -18,14 +18,15 @@ function Player() {
     return formatTime(this.playTime())
   }, this)
 
-  var subtitleObject = {
+  this.video
+  this.subtitleTop = {
     subtitles: [],
     subcount: 0
   }
-
-  this.video
-  this.subtitleTop = subtitleObject
-  this.subtitleBottom = subtitleObject
+  this.subtitleBottom = {
+    subtitles: [],
+    subcount: 0
+  }
 
   this.updateSub = function (subtitle) {
     var subtitleText = ''
@@ -71,19 +72,19 @@ function Player() {
         getData('player/media/WhatCouldIDo-sub-en.srt', function (data) {
           that.subtitleTop.subtitles = parseSub(data)
         })
-        // getData('player/media/WhatCouldIDo-sub-vi.srt', function (data) {
-        //   that.subtitleBottom.subtitles = parseSub(data)
-        // })
+        getData('player/media/WhatCouldIDo-sub-vi.srt', function (data) {
+          that.subtitleBottom.subtitles = parseSub(data)
+        })
         break;
       case 'timeupdate':
         this.playTime(this.video.currentTime)
 
         this.subTop(this.updateSub(this.subtitleTop))
-        //this.subBottom(this.updateSub(this.subtitleBottom))
+        this.subBottom(this.updateSub(this.subtitleBottom))
         break
       case 'seeked':
         this.seekSub(this.subtitleTop)
-        //this.seekSub(this.subtitleBottom)
+        this.seekSub(this.subtitleBottom)
         break
       case 'ended':
         this.isPlaying(false)
@@ -229,6 +230,6 @@ function parseSub(sub) {
     subtitles[r] = new Array()
     subtitles[r] = record.split('\n')
   }
-  console.log(subtitles)
+  
   return subtitles
 }
