@@ -1,9 +1,9 @@
-function Player() {
+function Player(isPlaying) {
   this.options = {
     url: 'player/index.html'
   }
 
-  this.isPlaying = blocks.observable(false)
+  this.isPlaying = isPlaying
   this.isFullScreen = blocks.observable(false)
   this.isShowControl = blocks.observable(true)
   this.playTime = blocks.observable(0)
@@ -122,9 +122,7 @@ function Player() {
   this.mouseMove = function (event) {
     this.isShowControl(true)
 
-    if (this.isPlaying()) {
-      this.hideControl()
-    }
+    this.hideControl()
   }
 
   this.clickProgress = function (event) {
@@ -137,7 +135,7 @@ function Player() {
     var lastTimeMouseMoved = new Date().getTime();
     setTimeout(function () {
       var currentTime = new Date().getTime();
-      if (currentTime - lastTimeMouseMoved >= 5000) {
+      if (this.isPlaying() && currentTime - lastTimeMouseMoved >= 5000) {
         that.isShowControl(false)
       }
     }, 5000)

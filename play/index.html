@@ -60,43 +60,45 @@
                     </div>
                 </div>
     </nav>
-    <div class="row">
-      <div class="col-md-10 play-container">
-          <div data-query="view(Player)"></div>
-<nav>
-  <ul class="pagination">
-    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-    <li><a class="watched" href="#">1 <span class="sr-only">(current)</span></a></li>
-    <li><a class="watched" href="#">2 <span class="sr-only">(current)</span></a></li>
-    <li><a class="watched" href="#">3 <span class="sr-only">(current)</span></a></li>
-    <li><a class="watched" href="#">4 <span class="sr-only">(current)</span></a></li>
-    <li class="active"><a href="#">5 <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">6 <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">7 <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">8 <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">9 <span class="sr-only">(current)</span></a></li>
-    <li><a href="#">10 <span class="sr-only">(current)</span></a></li>
-    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
-  </ul>
-</nav>
+    <div data-query="view(Play)">
+        <div class="{{playerClass}} play-container">
+            <div data-query="view($root.Player)"></div>
+            <nav>
+                <ul class="pagination">
+                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    <li><a class="watched" href="#">1 <span class="sr-only">(current)</span></a></li>
+                    <li><a class="watched" href="#">2 <span class="sr-only">(current)</span></a></li>
+                    <li><a class="watched" href="#">3 <span class="sr-only">(current)</span></a></li>
+                    <li><a class="watched" href="#">4 <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="#">5 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">6 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">7 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">8 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">9 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">10 <span class="sr-only">(current)</span></a></li>
+                    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
+                </ul>
+            </nav>
 
-          <div id="fb-root"></div>
-          <script>
-              (function(d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s);
-                  js.id = id;
-                  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1735047286751588";
-                  fjs.parentNode.insertBefore(js, fjs);
-              }(document, 'script', 'facebook-jssdk'));
-          </script>
-          
-          <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-          <div class="fb-comments" data-href="http://thachphamminh.blogspot.com/" data-numposts="5"></div>
-      </div>
-      <div class="col-md-2">
-      </div>
+            <div class="fb-play-{{isPlaying}}">
+                <div id="fb-root"></div>
+                <script>
+                    (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1735047286751588";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+                </script>
+
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div class="fb-comments" data-href="http://thachphamminh.blogspot.com/" data-numposts="5"></div>
+            </div>
+        </div>
+        <div class="col-md-2 fb-play-{{isPlaying}}">
+        </div>
     </div>
 </body>
 

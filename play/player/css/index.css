@@ -155,7 +155,7 @@
     font-weight: bold;
     text-shadow: #000000 1px 1px 5px;
     left: 5%;
-    right: 10%
+    right: 5%;
 }
 
 @media (max-width: 767px) {
