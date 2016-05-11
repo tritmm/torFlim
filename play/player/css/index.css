@@ -14,7 +14,7 @@
 }
 
 #video-player {
-  cursor: none
+    cursor: none
 }
 
 #player {
@@ -154,6 +154,12 @@
     font-size: 2em;
     font-weight: bold;
     text-shadow: #000000 1px 1px 5px;
-    left: 10%;
+    left: 5%;
     right: 10%
+}
+
+@media (max-width: 767px) {
+  .subtitle {
+    font-size: 1.5em
+  }
 }

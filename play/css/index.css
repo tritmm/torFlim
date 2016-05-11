@@ -1,0 +1,37 @@
+.navbar-form .glyphicon-search {
+    font-size: 1.5em;
+}
+
+.navbar-right img {
+    width: 2.5em;
+    height: 2.5em;
+    position: absolute;
+    border: 0.1em;
+    border-style: solid;
+    bottom: 0.5em;
+}
+
+#username {
+    margin-left: 3em
+}
+
+@media (max-width: 767px) {
+  .navbar-form {
+    border-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  
+  .navbar-right img {
+    bottom: 0.3em;
+  }
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.play-container {
+  margin-top: 4.5em;
+  margin-left: 5%;
+  margin-right: 5%;
+}

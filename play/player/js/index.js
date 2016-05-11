@@ -18,37 +18,44 @@ function Player() {
     return formatTime(this.playTime())
   }, this)
 
+  var subtitleObject = {
+    subtitles: [],
+    subcount: 0
+  }
+
   this.video
-  this.subtitlesTop
-  this.subcountTop = 0
-  this.subtitlesBottom
-  this.subcountBottom = 0
+  this.subtitleTop = subtitleObject
+  this.subtitleBottom = subtitleObject
 
-  this.updateSub = function (subtitles) {
-    var subtitle = ''
-
+  this.updateSub = function (subtitle) {
+    var subtitleText = ''
+    
     // check if the next subtitle is in the current time range
-    if (this.video.currentTime.toFixed(1) > videosub_timecode_min(subtitles[this.subcountTop][1])
-      && this.video.currentTime.toFixed(1) < videosub_timecode_max(subtitles[this.subcountTop][1])) {
-      subtitle = subtitles[this.subcountTop][2]
+    if (this.video.currentTime.toFixed(1) > videosub_timecode_min(subtitle.subtitles[subtitle.subcount][1])
+      && this.video.currentTime.toFixed(1) < videosub_timecode_max(subtitle.subtitles[subtitle.subcount][1])) {
+      
+      for (var index = 2; index < subtitle.subtitles[subtitle.subcount].length; index++) {
+        var element = subtitle.subtitles[subtitle.subcount][index]
+        subtitleText = subtitleText ? subtitleText + ' - ' + element : element
+      }
     }
 
     // is there a next timecode?
-    if (this.video.currentTime.toFixed(1) > videosub_timecode_max(subtitles[this.subcountTop][1])
-      && this.subcountTop < (subtitles.length - 1)) {
-      this.subcountTop++
+    if (this.video.currentTime.toFixed(1) > videosub_timecode_max(subtitle.subtitles[subtitle.subcount][1])
+      && subtitle.subcount < (subtitle.subtitles.length - 1)) {
+      subtitle.subcount++
     }
-
-    return subtitle
+    
+    return subtitleText
   }
 
-  this.seekSub = function (subtitles) {
-    this.subcountTop = 0
+  this.seekSub = function seekSub(subtitle) {
+    subtitle.subcount = 0
 
-    while (videosub_timecode_max(subtitles[this.subcountTop][1]) < this.video.currentTime.toFixed(1)) {
-      this.subcountTop++
-      if (this.subcountTop > subtitles.length - 1) {
-        this.subcountTop = subtitles.length - 1
+    while (videosub_timecode_max(subtitle.subtitles[subtitle.subcount][1]) < this.video.currentTime.toFixed(1)) {
+      subtitle.subcount++
+      if (subtitle.subcount > subtitle.subtitles.length - 1) {
+        subtitle.subcount = subtitle.subtitles.length - 1
         break;
       }
     }
@@ -62,21 +69,21 @@ function Player() {
 
         var that = this
         getData('player/media/WhatCouldIDo-sub-en.srt', function (data) {
-          that.subtitlesTop = parseSub(data)
+          that.subtitleTop.subtitles = parseSub(data)
         })
-        getData('player/media/WhatCouldIDo-sub-vi.srt', function (data) {
-          that.subtitlesBottom = parseSub(data)
-        })
+        // getData('player/media/WhatCouldIDo-sub-vi.srt', function (data) {
+        //   that.subtitleBottom.subtitles = parseSub(data)
+        // })
         break;
       case 'timeupdate':
         this.playTime(this.video.currentTime)
 
-        this.subTop(this.updateSub(this.subtitlesTop))
-        this.subBottom(this.updateSub(this.subtitlesBottom))
+        this.subTop(this.updateSub(this.subtitleTop))
+        //this.subBottom(this.updateSub(this.subtitleBottom))
         break
       case 'seeked':
-        this.seekSub(this.subtitlesTop)
-        this.seekSub(this.subtitlesBottom)
+        this.seekSub(this.subtitleTop)
+        //this.seekSub(this.subtitleBottom)
         break
       case 'ended':
         this.isPlaying(false)
@@ -177,20 +184,26 @@ function changeFullScreenState(element, isExit) {
 }
 
 function videosub_timecode_min(tc) {
-  tcpair = tc.split('-->');
-  return videosub_tcsecs(tcpair[0]);
+  if (tc) {
+    tcpair = tc.split(' --> ')
+    return videosub_tcsecs(tcpair[0])
+  }
+  return 0
 }
 
 function videosub_timecode_max(tc) {
-  tcpair = tc.split('-->');
-  return videosub_tcsecs(tcpair[1]);
+  if (tc) {
+    tcpair = tc.split(' --> ')
+    return videosub_tcsecs(tcpair[1])
+    }
+  return 0
 }
 
 function videosub_tcsecs(tc) {
-  tc1 = tc.split(',');
-  tc2 = tc1[0].split(':');
-  secs = Math.floor(tc2[0] * 60 * 60) + Math.floor(tc2[1] * 60) + Math.floor(tc2[2]);
-  return secs;
+  tc1 = tc.split(',')
+  tc2 = tc1[0].split(':')
+  secs = Math.floor(tc2[0]*60*60) + Math.floor(tc2[1]*60) + Math.floor(tc2[2])
+  return secs
 }
 
 function getData(url, callback) {
@@ -208,14 +221,14 @@ function getData(url, callback) {
 }
 
 function parseSub(sub) {
-  subtitles = new Array()
-  records = sub.split('\n\n')
+  var subtitles = new Array()
+  var records = sub.split('\n\n')
 
   for (var r = 0; r < records.length; r++) {
     record = records[r]
     subtitles[r] = new Array()
     subtitles[r] = record.split('\n')
   }
-
+  console.log(subtitles)
   return subtitles
 }

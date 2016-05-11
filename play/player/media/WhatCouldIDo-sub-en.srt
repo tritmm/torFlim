@@ -1,6 +1,7 @@
 1
 00:00:16,897 --> 00:00:23,421
 How can we find the love and warmth from yesterday
+How can we find the love and warmth from yesterday
 
 2
 00:00:24,426 --> 00:00:30,628
@@ -169,3 +170,4 @@ Yet that vision of us is out of reach
 43
 00:04:37,982 --> 00:04:48,530
  I’ll always love you as I do today
+
